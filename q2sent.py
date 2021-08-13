@@ -10,3 +10,7 @@ val_sent_vectors, val_question_vectors = find_sent(train_contexts, train_questio
 
 q2s_model = V2V(input_dim = 768, n_epochs = 300, batch_size = 32)
 q2s_model.train(train_question_vectors, train_sent_vectors)
+
+
+with open('q2s_model.pt', 'wb') as f:
+    torch.save(q2s_model, f)
