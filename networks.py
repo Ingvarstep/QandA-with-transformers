@@ -9,7 +9,7 @@ class V2V(torch.nn.Module):
         self.n_epochs = n_epochs
         self.batch_size = batch_size
         self.optimizer = torch.optim.Adam(self.fc.parameters())
-        self.loss_func = torch.nn.MSELoss()
+        self.loss_func = torch.nn.HuberLoss()
 
     def forward(self, x):
         return self.fc(x)
